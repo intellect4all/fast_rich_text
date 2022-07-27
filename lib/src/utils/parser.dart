@@ -35,7 +35,7 @@ class Parser {
     if (_noMatchingSymbolsExists) {
       return ParsedNode(
         startIndex: 0,
-        endIndex: text.length,
+        endIndex: text.length - 1,
       );
     }
 
