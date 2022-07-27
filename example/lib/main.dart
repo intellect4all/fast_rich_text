@@ -1,3 +1,4 @@
+import 'package:example/live_typing_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rich_text/flutter_rich_text.dart';
 
@@ -50,6 +51,7 @@ class MyHomePage extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
+            const LiveTypingWidget(),
             ExampleCard(
               text: textForDefault,
               title: 'Default settings',
@@ -68,6 +70,7 @@ class MyHomePage extends StatelessWidget {
                 boldSTextStyle: const TextStyle(
                   color: Colors.red,
                   fontSize: 17,
+                  fontWeight: FontWeight.bold,
                 ),
                 italicTextStyle: const TextStyle(
                   color: Colors.green,
@@ -91,6 +94,7 @@ class MyHomePage extends StatelessWidget {
                 text: textForStyleInStyle,
                 boldSTextStyle: const TextStyle(
                   color: Colors.red,
+                  fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
                 italicTextStyle: const TextStyle(
@@ -140,6 +144,7 @@ class MyHomePage extends StatelessWidget {
                     symbolCharacter: '&',
                     style: TextStyle(
                       color: Colors.blueAccent,
+                      fontWeight: FontWeight.bold,
                       fontSize: 13,
                     ),
                   )
