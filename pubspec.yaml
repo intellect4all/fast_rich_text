@@ -1,7 +1,8 @@
-name: flutter_rich_text
+name: fast_rich_text
 description: A package that let you write beautiful texts easily with simple tags, e.g *bold* will be bold, etc.
 version: 0.0.1
 homepage: https://github.com/intellect4all/flutter_rich_text
+repository: https://github.com/intellect4all/flutter_rich_text 
 
 environment:
   sdk: ">=2.17.6 <3.0.0"

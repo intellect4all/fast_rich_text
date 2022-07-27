@@ -1,6 +1,6 @@
 import 'package:example/example_card.dart';
+import 'package:fast_rich_text/fast_rich_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rich_text/flutter_rich_text.dart';
 
 class LiveTypingWidget extends StatefulWidget {
   const LiveTypingWidget({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _LiveTypingWidgetState extends State<LiveTypingWidget> {
             ExampleCard(
               text: _text,
               title: 'Parsed Text',
-              child: FlutterRichText(
+              child: FastRichText(
                 text: _text,
                 boldSTextStyle: const TextStyle(
                   color: Colors.red,

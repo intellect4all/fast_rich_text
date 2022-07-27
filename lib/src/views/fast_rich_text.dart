@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rich_text/src/utils/node_to_text_converter.dart';
-import 'package:flutter_rich_text/src/models/symbol_params.dart';
 
-class FlutterRichText extends StatelessWidget {
+import '../models/symbol_params.dart';
+import '../utils/node_to_text_converter.dart';
+
+class FastRichText extends StatelessWidget {
   /// The formatted input string to be parsed into rich text
   final String text;
 
@@ -89,7 +90,7 @@ class FlutterRichText extends StatelessWidget {
   /// Custom [TextStyle] to apply to strikethrough texts.
   final TextStyle? strikethroughTextStyle;
 
-  FlutterRichText({
+  FastRichText({
     Key? key,
     required this.text,
     this.textAlign = TextAlign.left,

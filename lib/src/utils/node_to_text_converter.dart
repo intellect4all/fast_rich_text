@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rich_text/src/utils/parser.dart';
-import 'package:flutter_rich_text/src/utils/string_to_node_parser.dart';
-import 'package:flutter_rich_text/src/models/symbol_params.dart';
+
 
 import '../models/parsed_node.dart';
+import '../models/symbol_params.dart';
+import 'parser.dart';
+import 'string_to_node_parser.dart';
 
 class NodeToTextConverter {
   final List<SymbolParams> symbols;

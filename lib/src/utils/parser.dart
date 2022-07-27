@@ -1,8 +1,9 @@
-import 'package:flutter_rich_text/src/utils/string_to_node_parser.dart';
+
 
 import '../models/parsed_node.dart';
 
 import '../models/special_symbol.dart';
+import 'string_to_node_parser.dart';
 
 class Parser {
   /// the text to be parsed

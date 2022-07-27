@@ -1,6 +1,6 @@
 import 'package:example/live_typing_widget.dart';
+import 'package:fast_rich_text/fast_rich_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rich_text/flutter_rich_text.dart';
 
 import 'example_card.dart';
 
@@ -55,7 +55,7 @@ class MyHomePage extends StatelessWidget {
             ExampleCard(
               text: textForDefault,
               title: 'Default settings',
-              child: FlutterRichText(
+              child: FastRichText(
                 text: textForDefault,
                 textStyle: const TextStyle(
                   color: Colors.black,
@@ -65,7 +65,7 @@ class MyHomePage extends StatelessWidget {
             ExampleCard(
               text: textForChangeStyle,
               title: 'Change style of each group',
-              child: FlutterRichText(
+              child: FastRichText(
                 text: textForChangeStyle,
                 boldSTextStyle: const TextStyle(
                   color: Colors.red,
@@ -90,7 +90,7 @@ class MyHomePage extends StatelessWidget {
             ExampleCard(
               text: textForStyleInStyle,
               title: 'Style in Style',
-              child: FlutterRichText(
+              child: FastRichText(
                 text: textForStyleInStyle,
                 boldSTextStyle: const TextStyle(
                   color: Colors.red,
@@ -115,7 +115,7 @@ class MyHomePage extends StatelessWidget {
             ExampleCard(
               text: textForCustomTags,
               title: 'Define custom tags',
-              child: FlutterRichText(
+              child: FastRichText(
                 text: textForCustomTags,
                 useCustomParseSymbolsOnly: true,
                 customSymbols: const [

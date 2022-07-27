@@ -17,25 +17,25 @@ add this line to pubspec.yaml
 
 ```yaml
     dependencies:
-        flutter_rich_text: version,
+        fast_rich_text: version,
 ```
 
 import package
 
 ```dart
 
-    import 'package:flutter_rich_text/flutter_rich_text.dart';
+    import 'package:fast_rich_text/fast_rich_text.dart';
 
 ```
 
-And simply add the FlutterRichText widget anywhere in your app
+And simply add the FastRichText widget anywhere in your app
 
 ```dart
 
     Widget build(BuildContext context) {
         return Scaffold(
             body: Center(
-                child: FlutterRichText(
+                child: FastRichText(
                     text: textForChangeStyle,
                     textStyle: const TextStyle(
                     color: Colors.black,
@@ -51,7 +51,7 @@ You can provide custom styling for bold, italic and strikethrough as follows:
 
 ```dart
 
-    FlutterRichText(
+    FastRichText(
         text: textForChangeStyle,
         textStyle: const TextStyle(
             color: Colors.black,
@@ -78,7 +78,7 @@ And you can define custom tags by passing a list of SymbolParams to the customSy
 
 ```dart
 
-    FlutterRichText(
+    FastRichText(
         text: textForCustomTags,
         useCustomParseSymbolsOnly: true,
         customSymbols: const [
@@ -118,7 +118,7 @@ And you can define custom tags by passing a list of SymbolParams to the customSy
     ),
 
 ```
-## FlutterRichText in action
+## FastRichText in action
 ![](visuals/recording.gif)
 ![](visuals/screenshot.png)
 

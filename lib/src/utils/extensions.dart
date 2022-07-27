@@ -1,4 +1,4 @@
-import 'package:flutter_rich_text/src/models/special_symbol.dart';
+import '../models/special_symbol.dart';
 
 extension SymbolExtension on List<SpecialSymbol> {
   SpecialSymbol? getMatchingSymbolOrNull(int pointer) {

@@ -1,6 +1,6 @@
-import 'package:flutter_rich_text/src/models/parsed_node.dart';
-import 'package:flutter_rich_text/src/models/special_symbol.dart';
-import 'package:flutter_rich_text/src/utils/string_to_node_parser.dart';
+import 'package:fast_rich_text/src/models/parsed_node.dart';
+import 'package:fast_rich_text/src/models/special_symbol.dart';
+import 'package:fast_rich_text/src/utils/string_to_node_parser.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

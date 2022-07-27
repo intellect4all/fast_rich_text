@@ -1,4 +1,5 @@
-import 'package:flutter_rich_text/src/models/parsed_node.dart';
+
+import '../models/parsed_node.dart';
 import 'extensions.dart';
 import '../models/special_symbol.dart';
 
