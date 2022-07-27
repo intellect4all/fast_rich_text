@@ -4,23 +4,25 @@ import '../utils/string_to_node_parser.dart';
 import 'parsed_node.dart';
 
 class SpecialSymbol extends Equatable {
-  /// the symbol to be parsed
+  /// The symbol to be parsed.
   final String symbolChar;
 
-  /// indexes where the symbol occurs in the text to be parsed
+  /// Indexes where the symbol occurs in the text to be parsed.
   final List<int> indexes;
 
+  /// Indexes of symbols in text.
+  ///
   /// All indexes where of all the special parsing symbols occur in the text to
-  /// be parsed, including this [indexes], in chronological order
+  /// be parsed, including this [indexes], in chronological order.
   final List<int> allIndexes;
 
   const SpecialSymbol({
     required this.symbolChar,
     this.indexes = const [],
     required this.allIndexes,
-  });
+  }) : assert(symbolChar.length < 2);
 
-  /// the index of the Character at [pointer] in this symbol
+  /// The index of the Character at [pointer] in this symbol.
   int charIndexInSymbolList(int pointer) {
     return indexes.indexOf(allIndexes[pointer]);
   }
@@ -41,10 +43,10 @@ class SpecialSymbol extends Equatable {
     return charIndexInSymbolList(pointer) + 1;
   }
 
-  /// Check if the next symbol index after this pointer exists within the length of this symbol
-  /// [indexes] and the given scope of [allIndexes]
+  /// Checks if the next symbol index after this pointer exists within the length of this symbol
+  /// [indexes] and the given scope of [allIndexes].
   ///
-  /// If [true], then skip this symbol two places, else continue parsing
+  /// If [true], then skip this symbol two places, else continue parsing.
   bool isOutOfBound(pointer, {required int startIndex, required int endIndex}) {
     int nextSymbolIndex = charIndexInSymbolList(pointer) + 1;
     return nextSymbolIndex >= indexes.length ||

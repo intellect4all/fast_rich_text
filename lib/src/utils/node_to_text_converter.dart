@@ -7,9 +7,14 @@ import '../models/parsed_node.dart';
 
 class NodeToTextConverter {
   final List<SymbolParams> symbols;
+
+  /// the original text
   final String text;
+
   final Parser _parser;
+
   final List<String> _symbolChars;
+
   NodeToTextConverter({
     required this.symbols,
     required this.text,
@@ -23,10 +28,12 @@ class NodeToTextConverter {
   get _getNormalTextStyle => _getSymbolStyle('');
 
   TextSpan convert() {
+    // generate the [ParsedNode] first
     final parsedNode = _parser.parse();
     return _textSpanFromNode(parsedNode);
   }
 
+  // mutually recursive with [_buildTextSpanChildren()]
   TextSpan _textSpanFromNode(ParsedNode node) {
     if (node.children.isEmpty) {
       final string = _getCleanedString(node.startIndex, node.endIndex + 1);

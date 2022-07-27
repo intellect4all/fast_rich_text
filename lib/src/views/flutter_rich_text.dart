@@ -70,11 +70,11 @@ class FlutterRichText extends StatelessWidget {
   /// defaults to false, i.e it uses symbols of bold, italic, and emphasis.
   ///
   /// It will also default false when [customSymbols] is empty
-  final bool useCustomParseSymbols;
+  final bool useCustomParseSymbolsOnly;
 
   /// user-defined symbols.
   ///
-  /// must be not be if [useCustomParseSymbols] is true
+  /// must be not be if [useCustomParseSymbolsOnly] is true
   final List<SymbolParams> customSymbols;
 
   /// The [TextStyle] to apply to normal texts.
@@ -99,7 +99,7 @@ class FlutterRichText extends StatelessWidget {
     this.locale,
     this.strutStyle,
     this.textHeightBehavior,
-    this.useCustomParseSymbols = false,
+    this.useCustomParseSymbolsOnly = false,
     this.overflow = TextOverflow.clip,
     this.textScaleFactor = 1.0,
     this.textWidthBasis = TextWidthBasis.parent,
@@ -116,13 +116,15 @@ class FlutterRichText extends StatelessWidget {
   Widget build(BuildContext context) {
     if (text.isEmpty) return const SizedBox();
 
-    if (useCustomParseSymbols && customSymbols.isEmpty) {
+    if (useCustomParseSymbolsOnly && customSymbols.isEmpty) {
       return returnStringUnparsed();
     }
 
     _allSymbols.clear();
     _allSymbols.addAll(customSymbols);
-    _addDefaultSymbols();
+    if (!useCustomParseSymbolsOnly) {
+      _addDefaultSymbols();
+    }
 
     final distinctSymbols = <SymbolParams>[];
 

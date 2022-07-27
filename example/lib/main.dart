@@ -113,7 +113,7 @@ class MyHomePage extends StatelessWidget {
               title: 'Define custom tags',
               child: FlutterRichText(
                 text: textForCustomTags,
-                useCustomParseSymbols: true,
+                useCustomParseSymbolsOnly: true,
                 customSymbols: const [
                   SymbolParams(
                     symbolCharacter: '-',

@@ -8,7 +8,7 @@ class SymbolParams extends Equatable {
   const SymbolParams({
     required this.symbolCharacter,
     this.style,
-  });
+  }) : assert(symbolCharacter.length < 2);
 
   @override
   List<Object> get props => [symbolCharacter];

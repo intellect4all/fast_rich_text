@@ -8,7 +8,7 @@ class Parser {
   /// the text to be parsed
   final String text;
 
-  /// Symbols to be checked for, e.g '*. Must be a single character
+  /// Symbols to be checked for, example is '*'. Must be a single character
   List<String> symbols;
 
   final StringToNodeParser _stringToNodeParser;
@@ -27,11 +27,11 @@ class Parser {
   bool get _noMatchingSymbolsExists => _allSymbols.isEmpty;
 
   ParsedNode parse() {
-    // create the symbols to parse
+    // create the symbols before parsing
     _createSymbols();
 
-    // return the whole [text] if no symbol has at least one matching pairs
-    // i.e nothing to parse
+    // Return the whole [text] if no symbol has at least one matching pairs
+    // meaning  nothing to parse
     if (_noMatchingSymbolsExists) {
       return ParsedNode(
         startIndex: 0,
@@ -39,6 +39,7 @@ class Parser {
       );
     }
 
+    /// Return the parent node, which then recursively generate child nodes.
     return ParsedNode(
       startIndex: 0,
       endIndex: text.length - 1,
@@ -50,14 +51,14 @@ class Parser {
     );
   }
 
-  /// this will generate the indexes where the parsing symbols appear.
+  /// This will generate the indexes where the parsing symbols appear.
   void _generateIndexes() {
-    // clear to avoid duplicates indexes
+    // Clear to avoid duplicate indexes
     _symbolIndexes.clear();
 
     for (int i = 0; i < text.length; i++) {
       if (_isRegisteredSymbol(text[i])) {
-        // symbol already in the registered
+        // symbol already registered
         if (_symbolIndexes.containsKey(text[i])) {
           _symbolIndexes[text[i]]!.add(i);
         } else {
@@ -69,7 +70,7 @@ class Parser {
       }
     }
 
-    // sort the indexes so they can be chronological, since it is impossible to
+    // Sort the indexes so they can be chronological, since it is impossible to
     // have more than one char at any given indexes in a string
     _allIndexes.sort();
   }
