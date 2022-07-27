@@ -126,6 +126,8 @@ class FlutterRichText extends StatelessWidget {
       _addDefaultSymbols();
     }
 
+    _addNormalTextStyle();
+
     final distinctSymbols = <SymbolParams>[];
 
     // Set can be used to, but set does not guarantee an order, it is better
@@ -175,14 +177,6 @@ class FlutterRichText extends StatelessWidget {
   void _addDefaultSymbols() {
     final list = <SymbolParams>[];
 
-    // include the textStyle for normal texts
-    list.add(
-      SymbolParams(
-        symbolCharacter: '',
-        style: textStyle,
-      ),
-    );
-
     // add bold default
     list.add(
       SymbolParams(
@@ -217,5 +211,14 @@ class FlutterRichText extends StatelessWidget {
     );
 
     _allSymbols.addAll(list);
+  }
+
+  void _addNormalTextStyle() {
+    _allSymbols.add(
+      SymbolParams(
+        symbolCharacter: '',
+        style: textStyle,
+      ),
+    );
   }
 }
