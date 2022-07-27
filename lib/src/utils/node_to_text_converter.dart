@@ -96,7 +96,7 @@ class NodeToTextConverter {
       }
     }
 
-    string = _getCleanedString(lastNode.endIndex, end);
+    string = _getCleanedString(lastNode.endIndex, end + 1);
 
     children.add(
       TextSpan(
